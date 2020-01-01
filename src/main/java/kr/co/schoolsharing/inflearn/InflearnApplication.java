@@ -28,13 +28,10 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 @SpringBootApplication
-@EnableConfigurationProperties(AAAProperties.class)
 public class InflearnApplication {
 
     public static void main(String[] args) throws Exception{
-//        SpringApplication.run(InflearnApplication.class, args);
         SpringApplication app = new SpringApplication(InflearnApplication.class);
-//        app.setWebApplicationType(WebApplicationType.NONE);
         app.run(args);
     }
 
