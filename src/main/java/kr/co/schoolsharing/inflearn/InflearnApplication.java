@@ -9,10 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class InflearnApplication {
 
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(InflearnApplication.class);
-        app.setWebApplicationType(WebApplicationType.NONE);
-        app.run(args);
-//        SpringApplication.run(InflearnApplication.class, args);
+        SpringApplication.run(InflearnApplication.class, args);
     }
 
 }
