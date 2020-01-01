@@ -19,31 +19,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class InflearnApplication {
 
     public static void main(String[] args) throws Exception{
-//        SpringApplication.run(InflearnApplication.class, args);
-        Tomcat tomcat = new Tomcat();
-        tomcat.setPort(53340);
+        SpringApplication.run(InflearnApplication.class, args);
 
-        Context context = tomcat.addContext("/", "/");
-        HttpServlet httpServlet = new HttpServlet() {
-            @Override
-            protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-                PrintWriter writer = resp.getWriter();
-                writer.println("<html><head><title>");
-                writer.println("HEY, TOMCAT");
-                writer.println("</title></head>");
-                writer.println("<body><h1>hello tomcat</h1><body>");
-                writer.println("</html>");
-            }
-        };
-        String servletName = "helloServlet";
-        tomcat.addServlet("/", servletName, httpServlet);
-        context.addServletMappingDecoded("/hello", servletName);
-        tomcat.start();
-//        tomcat.getServer().await();
     }
 
 }
