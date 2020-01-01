@@ -29,21 +29,7 @@ public class InflearnApplication {
     public static void main(String[] args) throws Exception{
 //        SpringApplication.run(InflearnApplication.class, args);
         SpringApplication app = new SpringApplication(InflearnApplication.class);
-        app.setBanner(new Banner() {
-            @Override
-            public void printBanner(Environment environment, Class<?> sourceClass, PrintStream out) {
-                System.out.println("--------------------------------asd---");
-                System.out.println("굳모닝");
-                System.out.println("-----------------------------------");
-
-            }
-        });
-//        app.setBannerMode(Banner.Mode.OFF); // 배너 끄기 옵션
-
-        // 빌더도 사용 가능 실행에
-//        new SpringApplicationBuilder()
-//                .sources(InflearnApplication.class)
-//                .run(args);
+        app.addListeners(new SampleListener());
         app.run(args);
     }
 
